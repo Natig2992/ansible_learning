@@ -1,0 +1,4 @@
+/root/ansible/lessons_by_udemy/lesson-1/ansible.cfg - it is configure file for ansible. To show, where it`s generated, let`s
+type ccommand "ansible --version" and see this such inform "config file = /etc/ansible/ansible.cfg".
+
+It is best to keep this file at the project folder, as there can be many projects...

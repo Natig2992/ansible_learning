@@ -1,0 +1,3 @@
+Ansible setting_variables by precedence:
+
+defaults-file => group_vars/* => setting vars in playbook (highest priority)

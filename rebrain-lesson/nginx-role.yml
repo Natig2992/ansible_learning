@@ -1,0 +1,12 @@
+---
+- hosts: app
+  roles: 
+    - nginx
+  vars:
+    - nginx_server_name: app3.devops.ngs.com
+
+- hosts: lb 
+  roles:
+    - nginx-2
+  vars:
+    - nginx2_server_name: lb3.devops.ngs.com

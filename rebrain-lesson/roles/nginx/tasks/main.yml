@@ -1,0 +1,27 @@
+---
+- name: Installing nginx
+  apt:
+    name: nginx
+    state: latest
+    update_cache: yes
+  become: yes
+ 
+- name: Updating default config
+  template:
+    src: templates/default
+    dest: /etc/nginx/sites-available/default
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+  notify: Restart nginx
+
+- name: Installing application config
+  template:
+    src:   templates/application.conf.j2
+    dest: /etc/nginx/sites-enabled/application.conf
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+  notify: Restart nginx

@@ -1,0 +1,6 @@
+[lb]
+80.249.150.198 ansible_ssh_user=root
+
+
+[app]
+ec2-18-157-179-66.eu-central-1.compute.amazonaws.com ansible_ssh_user=ubuntu
