@@ -1,0 +1,32 @@
+--- #begining all yaml files
+#key-value pairs format
+#lists with staring by  space or minus (-);equivalent directives must be strictly one under the other
+#Example of nested list:
+- fruits:
+    - apple
+    - orange
+    - mango
+- vegetables:
+    - carrots
+    - cucumbers
+    - tomatoes
+#Example with attributes in key-value and skills(nested list):
+- vasya:
+    nick: vasek
+    position: developer
+    skills:
+        - python
+        - perl
+        - PHP
+        - Bash
+- petya:
+    nick: pet
+    position: manager
+    skills: 
+        - manage
+        - make_noise
+#One-line:
+- kolya: { nick: kolyan, position: administrator, skills: ['killer', 'admin', 'engineer'] }
+
+#Lists in one-line:
+  fruites: ['apple', 'orange', 'mango']
