@@ -1,0 +1,26 @@
+
+# alias name for servers
+# myserver ansible_host=10.50.1.1 # as example
+
+# All servers are included either "all" group or group_with_specified name or "ungrouped"(withoud group_name)
+
+# Ansible is a case sensitive for naming, for example stagind_db and staging_DB are different groups
+
+# [dev_servers:var] - it is group for variables with key-value elements are written with an equal sign
+
+# [staging_ALL:children] - is general (parent) group for combining other groups and we enumerate all groups in this group
+
+
+
+[dev_servers]
+dev1 ansible_host=80.249.150.198 
+dev2 ansible_host=80.249.151.141
+
+[dev_servers:vars]
+ansible_user=root 
+ansible_ssh_private_key_file=/root/.ssh/id_rsa
+
+
+
+# "ansible-inventory --list | jq" - show all groups,servers and variables in JSON-format, jq command for nice output
+# "ansible-inventory --graph" - show the same, as previous command, but in tree-mode and without variables

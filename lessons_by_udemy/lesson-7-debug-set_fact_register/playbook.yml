@@ -1,0 +1,36 @@
+---
+- name: Playbook for Variable Lessons
+  hosts: dev_servers
+  become: yes
+
+  vars:
+    message1: Privet
+    message2: Natig
+    secret  : XCFDGSFGDJDHGFYDH
+
+  tasks:
+  - name: Print Secret variable
+    debug: 
+      var: secret
+  
+  - debug: # We can omit special name "name" for naming task, but its not convenient
+      msg: "Secret word is a {{ secret }}"  
+  
+  
+  - debug: # We can omit special name "name" for naming task, but its not convenient
+      msg: "Owner for these servers is --> {{ owner }} <--"
+
+  #- set_fact: full_message="{{ message1 }} {{ message2 }} of {{ owner }}" 
+  
+  # - debug:
+  #    var: full_message
+   
+  - debug:
+      var:  ansible_os_family  
+
+
+  - shell: uptime
+    register: results # "register" saves output of commands in specifying variable
+  - debug:
+      var: results.stdout # Show specific parametr "stdout"
+     
